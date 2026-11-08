@@ -8,7 +8,7 @@ Each problem folder has `app/` (the program), `tests/` (`unittest`), `results/` 
 
 | Folder | Contents |
 |---|---|
-| `Problem_1` | Paper problem; no files. |
+| `Problem_1` | Paper problem; image od solution |
 | `Problem_2` | `is_prime(n)`: primality test, descending 6k±1 search. |
 | `Problem_3` | Average number of random draws before a prime, for two intervals. |
 | `Problem_4` | Graph of the percentage of primes up to N, with 100 / ln(N) for comparison. |
