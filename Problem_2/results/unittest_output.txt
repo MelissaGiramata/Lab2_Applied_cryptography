@@ -1,0 +1,19 @@
+test_no_argument (__main__.TestCommandLine.test_no_argument) ... ok
+test_non_integer (__main__.TestCommandLine.test_non_integer) ... ok
+test_two_arguments (__main__.TestCommandLine.test_two_arguments) ... ok
+test_valid (__main__.TestCommandLine.test_valid) ... ok
+test_piazza_numbers (__main__.TestPiazza.test_piazza_numbers) ... ok
+test_divisible_by_2_and_3 (__main__.TestSmallCases.test_divisible_by_2_and_3) ... ok
+test_limit_below_5 (__main__.TestSmallCases.test_limit_below_5) ... ok
+test_not_prime (__main__.TestSmallCases.test_not_prime) ... ok
+test_prime (__main__.TestSmallCases.test_prime) ... ok
+test_composite_stops_at_first_divisor (__main__.TestTrace.test_composite_stops_at_first_divisor) ... ok
+test_divisors_are_1_or_5_mod_6_and_descending (__main__.TestTrace.test_divisors_are_1_or_5_mod_6_and_descending) ... ok
+test_last_divisor_is_5_for_primes (__main__.TestTrace.test_last_divisor_is_5_for_primes) ... ok
+test_trace_127 (__main__.TestTrace.test_trace_127) ... ok
+test_bad_types (__main__.TestTypeError.test_bad_types) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.721s
+
+OK

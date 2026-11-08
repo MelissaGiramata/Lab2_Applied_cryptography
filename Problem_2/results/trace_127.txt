@@ -1,0 +1,3 @@
+n = 127, floor(sqrt(127)) = 11
+divisors tested, in order: 11, 7, 5
+result: prime
