@@ -3,10 +3,12 @@
 Write a Python program that determines whether a given positive integer n is prime.
 
 ## Interface
-- File: `Problem_2/prime_test.py`.
-- An importable function `is_prime(n)` that returns `True` (prime) or `False` (not prime). Problem 3 must re-use this function.
+- File: `Problem_2/app/prime_test.py`.
+- An importable function `is_prime(n, tested=None)` that returns `True` (prime) or `False` (not prime). Problem 3 must re-use this function.
+- `tested` is an optional list used for tracing. If a list is passed, the main loop appends each divisor it tests to it, in order. Normal calls (including Problem 3) do not pass it.
+- The main loop lives inside `is_prime` (no separate helper). It computes one divisor at a time with a counter and never builds a list of candidates, so it can stop at the first divisor found.
 - A script that reads n from a command-line argument, calls the function, and prints a clear message (e.g. "37 is prime" / "36 is not prime").
-- If the command-line argument is missing, print `Usage: python prime_test.py <n>` and exit without a traceback.
+- If the script receives anything other than exactly one argument, or the argument is not a valid integer, print `Usage: python prime_test.py <n>` and exit without a traceback.
 
 ## Input and Output
 Input:
@@ -18,7 +20,8 @@ Output:
 
 Invalid input:
 - Any integer less than 2 (including 1, 0 and negatives) is not prime.
-- A non-integer input raises an error.
+- `is_prime` raises `TypeError` if n is not an `int` or if n is a `bool`.
+- The command-line script catches invalid input (missing or extra arguments, or an argument not convertible to an integer) and prints the usage message without a traceback.
 
 Edge cases:
 - If n is less than 2 (including 1), n is not prime.
@@ -70,7 +73,15 @@ The program must return the following results.
 (29 is the small prime above 25.)
 
 ## Verification
+- Tests use `unittest` (standard library, nothing to install) and live in `Problem_2/tests/`.
 - A test file covering the four Piazza numbers, the small test cases above, and the edge cases (n < 2, including 1, 0 and a negative; n = 2; n = 3; divisibility by 2 and by 3; limit < 5).
-- A trace check confirming the main loop visits only values with remainder 1 or 5 modulo 6, in descending order.
+- Trace checks call `is_prime(n, tested=lst)` with an empty list and examine `lst`. They confirm the main loop visits only values with remainder 1 or 5 modulo 6, in descending order.
 - The "last divisor tested is 5" check applies only when n is prime and floor(√n) ≥ 5. (For composite n the loop stops at the first divisor found.)
-- A trace test for n = 127 (prime, floor(√127) = 11), showing the −4/−2 alternation. The divisors tested, in order, must be: 11, 7, 5.
+- A trace test for n = 127 (prime, floor(√127) = 11), showing the −4/−2 alternation. `is_prime(127, tested=lst)` must leave `lst == [11, 7, 5]`.
+- Tests for `TypeError` (a string, a float, `True`/`False`) and for the command-line script's invalid input: no argument, two arguments, and a non-integer argument (usage message, no traceback).
+
+## Results
+`Problem_2/results/` holds:
+- The `unittest` output.
+- The result (prime / not prime) for each of the four Piazza numbers.
+- The trace output for n = 127.
