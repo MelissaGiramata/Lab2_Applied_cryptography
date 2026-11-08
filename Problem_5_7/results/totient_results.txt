@@ -1,0 +1,7 @@
+Pair 1: p=2003, q=2011, p*q=4028033, euler_totient=4024020, (p-1)*(q-1)=4024020, equal: yes, runtime 2.51 s
+Pair 2: p=2003, q=2999, p*q=6006997, euler_totient=6001996, (p-1)*(q-1)=6001996, equal: yes, runtime 3.94 s
+Pair 3: p=2011, q=2017, p*q=4056187, euler_totient=4052160, (p-1)*(q-1)=4052160, equal: yes, runtime 2.80 s
+Pair 4: p=2971, q=2999, p*q=8910029, euler_totient=8904060, (p-1)*(q-1)=8904060, equal: yes, runtime 5.92 s
+Pair 5: p=2477, q=2503, p*q=6199931, euler_totient=6194952, (p-1)*(q-1)=6194952, equal: yes, runtime 3.94 s
+Summary: (p-1)*(q-1) matched euler_totient(p*q) for all 5 pairs.
+Same prime twice: p=q=2003, p*p=4012009, euler_totient=4010006, p*(p-1)=4010006, (p-1)*(p-1)=4008004, equal: no, runtime 2.68 s
